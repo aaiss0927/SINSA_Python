@@ -70,8 +70,15 @@ class LinearRegression:
         
         n = len(x)
         total_error = 0
-        for predicted, actual in zip(x, y):
-            total_error += (predicted - actual) ** 2
+        # for predicted, actual in zip(self.predict(x), y):
+        #     total_error += (predicted - actual) ** 2
+
+        # 실제값
+        for i in range(n):
+            actual = y[i]
+            predicted = self.predict(x[i])
+            total_error += (actual - predicted) ** 2
+
         return total_error / n
     
     def gradient(self, x, y):
