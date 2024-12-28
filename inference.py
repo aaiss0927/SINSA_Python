@@ -10,7 +10,7 @@ def inference():
     # Todo
     model = LinearRegression()
 
-    # 모델 학습습
+    # 모델 학습
     trainer = Trainer(model)
     trainer.train(x_data, y_data)
 
