@@ -1,5 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import re
 
 class Dataset:
@@ -70,29 +68,6 @@ class Dataset:
         for i, (name, score, grade) in enumerate(self.data[:num_rows]):
             print(f"{name:<7} {score:<10.2f} {grade:<.2f}")
 
-    def display_data_graph(self) -> None:
-        """점수와 학점의 산점도를 표시합니다.
-
-        학생들의 점수와 학점 간의 관계를 보여주는 matplotlib 산점도를 생성합니다.
-        축 레이블, 제목, 그리드를 포함합니다.
-        """
-        plt.scatter(self.x_data, self.y_data)
-        plt.xlabel('score')
-        plt.ylabel('grade')
-        plt.title('graph')
-        plt.grid(True)
-        plt.show()
-    
-    def get_correlation_coefficient(self):
-        """점수와 학점 사이의 피어슨 상관 계수를 계산합니다.
-
-        Returns:
-            float: 점수와 학점 사이의 상관 계수
-        """
-        correlation_matrix = np.corrcoef(self.x_data, self.y_data)
-        correlation_coefficient = correlation_matrix[0, 1]
-        return correlation_coefficient
-
     def get_data(self):
         """점수와 학점 데이터를 반환합니다.
 
@@ -108,8 +83,3 @@ if __name__ == "__main__":
 
     dataset.display_data_table(len(x_data))
     print(f"데이터 수: {len(x_data)}")
-
-    dataset.display_data_graph()
-
-    correlation_coefficient = dataset.get_correlation_coefficient()
-    print(f"상관 계수: {correlation_coefficient:.2f}")
