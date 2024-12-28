@@ -42,6 +42,9 @@ class LinearRegression:
         #
         #
         # return result
+
+        result = self.w * x + self.b
+        return max(0.0, min(4.5, result)) 
     
     def loss(self, x, y):
         """평균 제곱 오차(MSE) 손실을 계산합니다.
@@ -64,6 +67,7 @@ class LinearRegression:
         #
         #
         # return total_error / n
+        
         n = len(x)
         total_error = 0
         for predicted, actual in zip(x, y):
