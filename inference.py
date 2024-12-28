@@ -37,5 +37,5 @@ def inference():
     # 결과 출력
     print(f"Input: {user_input:.2f}, Predicted: {prediction:.2f}")
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
         inference()
