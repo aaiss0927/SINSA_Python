@@ -64,6 +64,11 @@ class LinearRegression:
         #
         #
         # return total_error / n
+        n = len(x)
+        total_error = 0
+        for predicted, actual in zip(x, y):
+            total_error += (predicted - actual) ** 2
+        return total_error / n
     
     def gradient(self, x, y):
         """가중치와 편향에 대한 기울기를 계산합니다.
