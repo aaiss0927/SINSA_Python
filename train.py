@@ -41,14 +41,18 @@ class Trainer:
             # gradient 계산
             # Todo
             # w_grad, b_grad = 
-            
+            w_grad, b_grad = self.model.compute_gradients(x_data, y_data)
             # 파라미터 업데이트
             # Todo
             # self.model.w -= 
             # self.model.b -= 
-            
+            self.model.w -= self.lr * w_grad
+            self.model.b -= self.lr * b_grad
             # 100 epoch마다 loss 출력
             if (epoch + 1) % 100 == 0:
                 # Todo
                 # loss = 
                 # print(f"Epoch {epoch+1}/{self.epochs}, Loss: {loss:.4f}")
+                 if (epoch + 1) % 100 == 0:
+                    loss = self.model.compute_loss(x_data, y_data)
+                    print(f"Epoch {epoch+1}/{self.epochs}, Loss: {loss:.4f}")
