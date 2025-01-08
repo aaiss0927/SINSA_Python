@@ -38,22 +38,11 @@ class Trainer:
             b = b - learning_rate * b_gradient
         """
         for epoch in range(self.epochs):
-            # gradient 계산
-            # Todo
-            # w_grad, b_grad = 
             w_grad, b_grad = self.model.gradient(x_data, y_data)
-            # w - f'(w), b - f'(b)
-            # 파라미터 업데이트
-            # Todo
-            # self.model.w -= 
-            # self.model.b -= 
+            
             self.model.w -= self.lr * w_grad
             self.model.b -= self.lr * b_grad
-            # 100 epoch마다 loss 출력
+            
             if (epoch + 1) % 100 == 0:
-                # Todo
-                # loss = 
-                # print(f"Epoch {epoch+1}/{self.epochs}, Loss: {loss:.4f}")
-                 if (epoch + 1) % 100 == 0:
-                    loss = self.model.loss(x_data, y_data)
-                    print(f"Epoch {epoch+1}/{self.epochs}, Loss: {loss:.4f}")
+                 loss = self.model.loss(x_data, y_data)
+                 print(f"Epoch {epoch+1}/{self.epochs}, Loss: {loss:.4f}")   
