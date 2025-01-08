@@ -36,13 +36,6 @@ class LinearRegression:
             >>> model.predict(2.0)
             2.0
         """
-
-        # Todo
-        # result =
-        #
-        #
-        # return result
-
         result = self.w * x + self.b
         return max(0.0, min(4.5, result)) 
     
@@ -58,22 +51,10 @@ class LinearRegression:
 
         참고:
             MSE = (1/n) * Σ(예측값 - 실제값)²
-        """
-        # MSE(Mean Squared Error) 손실 함수
-
-        #Todo
-        # n = 
-        # total_error = 0
-        #
-        #
-        # return total_error / n
-        
+        """        
         n = len(x)
         total_error = 0
-        # for predicted, actual in zip(self.predict(x), y):
-        #     total_error += (predicted - actual) ** 2
-
-        # 실제값
+        
         for i in range(n):
             actual = y[i]
             predicted = self.predict(x[i])
@@ -99,7 +80,6 @@ class LinearRegression:
             ∂MSE/∂w = (2/n) * Σ(예측값 - 실제값) * x
             ∂MSE/∂b = (2/n) * Σ(예측값 - 실제값)
         """
-        # w와 b에 대한 gradient 계산
         n = len(x)
         w_grad = 0
         b_grad = 0
